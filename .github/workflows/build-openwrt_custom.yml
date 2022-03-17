@@ -80,7 +80,7 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         rm -rf openwrt/target/linux/ath79/generic/base-files/etc/board.d/02_network
         rm -rf openwrt/target/linux/ath79/image/generic.mk
-        mv target openwrt
+        cp -r target openwrt
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
