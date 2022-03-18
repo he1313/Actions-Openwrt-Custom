@@ -78,9 +78,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        rm -rf openwrt/target/linux/ath79/generic/base-files/etc/board.d/02_network
-        rm -rf openwrt/target/linux/ath79/image/generic.mk
-        cp -r target openwrt
+        cp -rf customfile/ openwrt
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
