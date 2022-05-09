@@ -60,8 +60,6 @@ ath79_setup_interfaces()
 	openmesh,mr1750-v2|\
 	pcs,cap324|\
 	pisen,ts-d084|\
-	holl,vpod-m1|\
-	holl,vpod-m1-8m|\
 	pisen,wmb001n|\
 	pisen,wmm003n|\
 	siemens,ws-ap3610|\
@@ -118,6 +116,11 @@ ath79_setup_interfaces()
 		;;
 	alfa-network,ap121fe)
 		ucidef_set_interface_lan "eth0 usb0"
+		;;
+	holl,vpod-m1|\
+	holl,vpod-m1-8m)
+		ucidef_set_interface_wan "eth0"
+		ucidef_set_interface_lan "eth0.1"
 		;;
 	alfa-network,n2q|\
 	alfa-network,n5q|\
